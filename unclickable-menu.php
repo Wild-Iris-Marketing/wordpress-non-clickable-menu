@@ -27,17 +27,17 @@ function unclickable_menu_add_checkbox($item_id, $item, $depth, $args) {
 	// error_log_wrap("ckt", $ckt);
 	// error_log_wrap("ck_gpm", $ck_gpm);
 
-	echo "<p class=\"field-unclickable description description-wide\"><label for=\"edit-menu-item-unclickable-{$item_id}\"><input type=\"checkbox\" id=\"edit-menu-item-unclickable-{$item_id}\" class=\"widefat code edit-menu-item-unclickable\" name=\"menu-item-unclickable[{$item_id}]\" value=\"1\" {$ck}/>{$ckt}</label></p>";
+	echo "<p class='field-unclickable description description-wide'><label for='edit-menu-item-unclickable-{$item_id}'><input type='checkbox' id='edit-menu-item-unclickable-{$item_id}' class='widefat code edit-menu-item-unclickable' name='menu-item-unclickable[{$item_id}]' value='1' {$ck}/>{$ckt}</label></p>";
 }
 
 add_action("wp_update_nav_menu_item", "unclickable_menu_item_update", 10, 3 );
 function unclickable_menu_item_update($menu_id, $menu_item_db_id, $args) {
-	if(!isset($_REQUEST['menu-item-unclickable'][$menu_item_db_id])) {
-		$unclickable_value = '';
+	if(!isset($_REQUEST["menu-item-unclickable"][$menu_item_db_id])) {
+		$unclickable_value = "";
 	}
 
 	else {
-		$unclickable_value = sanitize_text_field($_REQUEST['menu-item-unclickable'][$menu_item_db_id]);
+		$unclickable_value = sanitize_text_field($_REQUEST["menu-item-unclickable"][$menu_item_db_id]);
 	}
 
 	// error_log_wrap("unclickable_value(action)", $unclickable_value);
