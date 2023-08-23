@@ -1,0 +1,3 @@
+.unclickable > a:hover {
+	  cursor: default;
+}
