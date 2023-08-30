@@ -36,13 +36,13 @@ function unclickable_menu_add_checkbox($item_id, $item, $depth, $args) {
 			name='menu-item-unclickable[{$item_id}]'
 			value='1' {$ck}
 		/>
-		<label for='edit-menu-item-unclickable-{$item_id}'>Unclikable</label>
+		<label for='edit-menu-item-unclickable-{$item_id}'>Unclickable</label>
 	</p>";
 	// TODO: In the <label> above, INSTEAD of hardcoding "Unclickable", the original
-	// code instead inject the value of the (commented-out) $ckt variable above. But, why?
+	// code injected the value of the (commented-out) $ckt variable above. But, why?
 }
 
-add_action("wp_update_nav_menu_item", "unclickable_menu_item_update", 10, 3 );
+add_action("wp_update_nav_menu_item", "unclickable_menu_item_update", 10, 3);
 function unclickable_menu_item_update($menu_id, $menu_item_db_id, $args) {
 	if(!isset($_REQUEST["menu-item-unclickable"][$menu_item_db_id])) {
 		$unclickable_value = "";
