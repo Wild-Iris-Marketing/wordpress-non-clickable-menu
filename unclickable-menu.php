@@ -1,10 +1,23 @@
 <?php
+
+/**
+ * @package UnclickableMenu
+ */
 /*
-Plugin Name: Unclickable Menu Items
+Plugin Name: Unclickable Menu
+Plugin URI: https://wildirismarketing.com/wordpress-plugins/
 Description: Adds the ability to make a WordPress menu item unclickable
-Version: 1.0
-Author: Chris 'Xenon' Hanson
+Version: 1.0.0
+Author: Chris 'Xenon' Hanson and Jeremy 'cubicool' Moles
+Author URI: https://wildirismarketing.com/our-team-staff/
+License: GPLv2 or later
+Text Domain: unclickable-menu
 */
+
+// https://stackoverflow.com/questions/43212340/what-is-meant-by-if-defined-abspath
+if ( ! defined( 'ABSPATH' ) ) {
+    exit; // Exit if accessed directly
+}
 
 // This output can only be seen by watching the server's logs (i.e., ssh'ing into the
 // WordPress VPS and 'tail -f' the site's specific error output file.
