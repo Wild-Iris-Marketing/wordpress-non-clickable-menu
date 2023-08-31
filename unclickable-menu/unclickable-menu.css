@@ -1,3 +1,3 @@
-.unclickable > a:hover {
-	  cursor: default;
+.unclickable-menu-plugin-unclickable:hover {
+	cursor: default;
 }

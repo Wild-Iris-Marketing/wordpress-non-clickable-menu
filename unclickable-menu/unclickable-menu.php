@@ -29,7 +29,7 @@ function error_log_wrap($name, $var) {
 	error_log(">>> STOP {$name}\n");
 }
 
-wp_enqueue_style("unclickable_menu_style", "unlickable-menu.css");
+wp_enqueue_style("unclickable_menu_style", plugins_url("unclickable-menu.css", __FILE__), false, "1.0", "all");
 
 add_action("wp_nav_menu_item_custom_fields", "unclickable_menu_add_checkbox", 10, 4);
 function unclickable_menu_add_checkbox($item_id, $item, $depth, $args) {
@@ -76,7 +76,7 @@ function unclickable_menu_item_link_attributes($atts, $item, $args) {
 
 	if(!empty($unclickable_value)) {
 		$atts["href"] = "#";
-		$atts["class"] .= " unclickable";
+		$atts["class"] .= "unclickable-menu-plugin-unclickable";
 	}
 
 	// error_log_wrap("unclickable_value(filter)", $unclickable_value);
